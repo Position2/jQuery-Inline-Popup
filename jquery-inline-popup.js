@@ -9,6 +9,7 @@ https://github.com/Position2/jQuery-Inline-Popup
                     "iparrowclass"    	    : "inlinepopup_arrow",
                     "ipcontentwrapperclass" : "inlinepopup_content",
                     "descriptionElem" 	    : "ip-details",
+                    "activeFirst"           : true,
                     "scrollToViewPort" 	    : true,
                     "arrow" 						    : true,
                     "scrollOffset" 			    : 0,
@@ -43,6 +44,7 @@ https://github.com/Position2/jQuery-Inline-Popup
   	      	closeDesc($(ds).find("."+inlinePopup.settings.ipclass));
   	      }
         });
+        if(inlinePopup.settings.activeFirst) firstActive();
       }
 		};
 		var createDesc = function() {
@@ -65,7 +67,19 @@ https://github.com/Position2/jQuery-Inline-Popup
       descElem.find("."+inlinePopup.settings.ipcontentwrapperclass).html(dpCont);
       (lasRowNo != curRowNo) ? descElem.hide() : "";
       descElem.insertAfter(curRow.last());
-      (dpCont.trim()!="") ? inlinePopup.settings.scrollToViewPort && stVP?scrollToVP(current,function(){descElem.stop().slideDown()}):descElem.stop().slideDown() : descElem.hide();
+      if(dpCont.trim()!="") {
+        if(inlinePopup.settings.scrollToViewPort && stVP) {
+          scrollToVP(current,function(){
+            descElem.stop().slideDown(function(){ 
+              if(inlinePopup.settings.scrollToViewPort && $(ds).isOnScreen() && (curRowNo != lasRowNo))
+                scrollToVP(current);
+            })
+          })
+        }
+        else 
+          descElem.stop().slideDown()
+      } else
+        descElem.hide();
       inlinePopup.settings.arrow ? placeArrow(current,descElem) : "";
     };
     var placeArrow = function(c,de) {
@@ -77,7 +91,7 @@ https://github.com/Position2/jQuery-Inline-Popup
     	var scrollTo = e.offset().top - inlinePopup.settings.scrollOffset,
           doc      = $('html, body'),
           diff     = Math.abs(doc.scrollTop() - scrollTo);
-      (scrollTo > 10 && diff > 10) ? doc.stop().animate({ scrollTop: scrollTo },callback) : callback();
+      (scrollTo > 10 && diff > 10) ? doc.stop().animate({ scrollTop: scrollTo },callback) : typeof(callback) == "function" ? callback() : "";
     };
     var closeDesc = function(e) {
     	$(e).stop().slideUp(function() {
@@ -85,6 +99,10 @@ https://github.com/Position2/jQuery-Inline-Popup
     		$(this).remove();
     	})
     };
+    var firstActive = function() {
+      $(ds).find(inlinePopup.settings.selector).eq(0).addClass("active");
+      placeDesc(null,null,false);
+    }
 		this.setDataRow = function() {
 			var firstLeft = $(ds).find(inlinePopup.settings.selector).filter(":visible").offset().left,currentRow = 0,activeElem = "";
       $(ds).find("."+inlinePopup.settings.ipclass).hide();
