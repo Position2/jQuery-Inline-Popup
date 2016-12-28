@@ -3,7 +3,7 @@ JQuery Inline Popup
 https://github.com/Position2/jQuery-Inline-Popup
 */
 (function($) {
-	var defaults = {  "selector"        	    : "",
+	var defaults = {  "itemSelector"        	: "",
                     "ipclass"         	    : "inlinepopup",
                     "ipcloseclass"    	    : "inlinepopupClose",
                     "iparrowclass"    	    : "inlinepopup_arrow",
@@ -31,15 +31,15 @@ https://github.com/Position2/jQuery-Inline-Popup
 		var inlinePopup = {}, ds = this;
 		var init = function() {
 			inlinePopup.settings = $.extend({}, defaults, options);
-      var ipSelector = $(ds).find(inlinePopup.settings.selector);
+      var ipSelector = $(ds).find(inlinePopup.settings.itemSelector);
       if(ipSelector.size() <= 0 ) console.log("Selector not present");
       else {
         ds.setDataRow();
         ipSelector.click(function() {
           var curAct = $(this)
           if(!curAct.hasClass("active")) {
-  	        placeDesc(curAct,curAct.siblings(inlinePopup.settings.selector).filter(".active"));
-  	        curAct.addClass("active").siblings(inlinePopup.settings.selector).removeClass("active");
+  	        placeDesc(curAct,curAct.siblings(inlinePopup.settings.itemSelector).filter(".active"));
+  	        curAct.addClass("active").siblings(inlinePopup.settings.itemSelector).removeClass("active");
   	      } else {
   	      	closeDesc($(ds).find("."+inlinePopup.settings.ipclass));
   	      }
@@ -56,12 +56,12 @@ https://github.com/Position2/jQuery-Inline-Popup
        return previewElem; 
     };
     var placeDesc = function(current,lastActive,stVP) {
-      var current   = current || $(ds).find(inlinePopup.settings.selector).filter(".active"),
+      var current   = current || $(ds).find(inlinePopup.settings.itemSelector).filter(".active"),
           lastAct   = lastActive || "",
           stVP   		= typeof(stVP)=="boolean" ? stVP : true,
           curRowNo  = current.attr("data-row"),
           lasRowNo  = lastAct != "" ? lastAct.attr("data-row") : 0,
-          curRow    = $(ds).find(inlinePopup.settings.selector).filter("[data-row='"+curRowNo+"']:visible");
+          curRow    = $(ds).find(inlinePopup.settings.itemSelector).filter("[data-row='"+curRowNo+"']:visible");
           descElem  = ($(ds).find("."+inlinePopup.settings.ipclass).size() < 1 ) ? createDesc().hide() : $(ds).find("."+inlinePopup.settings.ipclass).css("height",""),
       		dpCont 		= current.find("."+inlinePopup.settings.descriptionElem).html() || "";
       descElem.find("."+inlinePopup.settings.ipcontentwrapperclass).html(dpCont);
@@ -95,18 +95,18 @@ https://github.com/Position2/jQuery-Inline-Popup
     };
     var closeDesc = function(e) {
     	$(e).stop().slideUp(function() {
-    		$(this).siblings(inlinePopup.settings.selector).filter(".active").removeClass("active");
+    		$(this).siblings(inlinePopup.settings.itemSelector).filter(".active").removeClass("active");
     		$(this).remove();
     	})
     };
     var firstActive = function() {
-      $(ds).find(inlinePopup.settings.selector).eq(0).addClass("active");
+      $(ds).find(inlinePopup.settings.itemSelector).eq(0).addClass("active");
       placeDesc(null,null,false);
     }
 		this.setDataRow = function() {
-			var firstLeft = $(ds).find(inlinePopup.settings.selector).filter(":visible").offset().left,currentRow = 0,activeElem = "";
+			var firstLeft = $(ds).find(inlinePopup.settings.itemSelector).filter(":visible").offset().left,currentRow = 0,activeElem = "";
       $(ds).find("."+inlinePopup.settings.ipclass).hide();
-      $(ds).find(inlinePopup.settings.selector).filter(":visible").each(function() {
+      $(ds).find(inlinePopup.settings.itemSelector).filter(":visible").each(function() {
         var cur  = $(this),
         curLeft  = cur.offset().left;
         if(firstLeft == curLeft) currentRow += 1;
@@ -120,7 +120,7 @@ https://github.com/Position2/jQuery-Inline-Popup
 		})
     $(window).resize(function() {
 	      ds.setDataRow();
-	      if($(ds).find(inlinePopup.settings.selector).filter(".active").size() > 0)
+	      if($(ds).find(inlinePopup.settings.itemSelector).filter(".active").size() > 0)
 	      	placeDesc(null,null,$(ds).isOnScreen());
     });
 		return this;
