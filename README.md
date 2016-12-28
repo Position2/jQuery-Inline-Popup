@@ -19,17 +19,28 @@ $(document).ready(function(){
 
 ## Plugin Options
 
-*  **itemSelector**
-*  **ipclass**
-*  **ipcloseclass**
-*  **iparrowclass**
-*  **ipcontentwrapperclass**
-*  **descriptionElem**
-*  **activeFirst**
-*  **scrollToViewPort**
-*  **arrow**
-*  **scrollOffset**
-*  **closeinnerelem**
+*  **itemSelector**<br/>
+_Child class.Click event will be added to these child elements._(eg:".items")
+*  **ipclass**<br/>
+_Inline popup class._(Default : inlinepopup)
+*  **ipcloseclass**<br/>
+_Inline popup close class._(Default : inlinepopupClose)
+*  **iparrowclass**<br/>
+_Inline popup arrow class._(Default : inlinepopup_arrow)
+*  **ipcontentwrapperclass**<br/>
+_Inline popup content wrapper class._(Default : inlinepopup\_content)
+*  **detailsElem**<br/>
+_Class of the element which has preview/detailed content._(Default : ip\_details)
+*  **activeFirst**<br/>
+_Make first child as active element by default._(default : true)
+*  **scrollToViewPort**<br/>
+_While showing the expanded preview.Automatically page will scroll to the inlinePopup section._(default : true)
+*  **arrow**<br/>
+_Add arrow in inlinePopup._(default : true)
+*  **scrollOffset**<br/>
+_If the page have sticky header.Add the header height._(default : 0)
+*  **closeinnerelem**<br/>
+_Close inner/child elem or Close text._(default : &lt;i class='fa fa-close'&gt;&lt;/i&gt;)
 
 ## Getting started
 
@@ -44,10 +55,18 @@ InlinePopup works on a container element with a group of similar child items.
 
 ```
 <div id="wrapper-container">
-  <div class="items">...</div>
-  <div class="items">...</div>
-  <div class="items">...</div>
-  <div class="items">...</div>
+  <div class="items">
+		...
+		<div class="ip_details">..
+			(detailed content/large image for preview )..
+		</div>
+	</div>
+	<div class="items">
+		...
+		<div class="ip_details">..
+			(detailed content/large image for preview )..
+		</div>
+	</div>
   ...
 </div>
 ```
@@ -60,6 +79,7 @@ All sizing of items is handled by your CSS.
 #wrapper-container { position:relative; }
 .items { width:250px; height:250px; float:left; }
 .ip-details { display:none; }
+.inlinepopup {  width:100%; float:left; }
 ```
 
 ### Initialize with jQuery

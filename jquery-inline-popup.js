@@ -8,7 +8,7 @@ https://github.com/Position2/jQuery-Inline-Popup
                     "ipcloseclass"    	    : "inlinepopupClose",
                     "iparrowclass"    	    : "inlinepopup_arrow",
                     "ipcontentwrapperclass" : "inlinepopup_content",
-                    "descriptionElem" 	    : "ip-details",
+                    "detailsElem" 	        : "ip-details",
                     "activeFirst"           : true,
                     "scrollToViewPort" 	    : true,
                     "arrow" 						    : true,
@@ -63,7 +63,7 @@ https://github.com/Position2/jQuery-Inline-Popup
           lasRowNo  = lastAct != "" ? lastAct.attr("data-row") : 0,
           curRow    = $(ds).find(inlinePopup.settings.itemSelector).filter("[data-row='"+curRowNo+"']:visible");
           descElem  = ($(ds).find("."+inlinePopup.settings.ipclass).size() < 1 ) ? createDesc().hide() : $(ds).find("."+inlinePopup.settings.ipclass).css("height",""),
-      		dpCont 		= current.find("."+inlinePopup.settings.descriptionElem).html() || "";
+      		dpCont 		= current.find("."+inlinePopup.settings.detailsElem).html() || "";
       descElem.find("."+inlinePopup.settings.ipcontentwrapperclass).html(dpCont);
       (lasRowNo != curRowNo) ? descElem.hide() : "";
       descElem.insertAfter(curRow.last());
