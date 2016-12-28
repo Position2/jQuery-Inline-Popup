@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+# jQuery-Inline-Popup
 
-You can use the [editor on GitHub](https://github.com/Position2/jQuery-Inline-Popup/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+A jQuery Plugin to show content within inline.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+InlinePopup is a simplified jquery plugin to achieve expanding preview as like Google Image.
 
-### Markdown
+Here the steps to configure...
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**Step 1 :** Download and link to the Jquery plugin
 
-```markdown
-Syntax highlighted code block
+**Step 2 :** Download and link to the Jquery inlinePopup plugin
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+**Step 3 :** Fire the jQuery simpleValidation Plugin 
+```javascript
+$(document).ready(function(){
+	$("#wrapper-container").inlinePopup({selector : ".eachSection"})
+});
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Position2/jQuery-Inline-Popup/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
