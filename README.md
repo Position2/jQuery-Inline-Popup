@@ -10,7 +10,7 @@ Here the steps to configure...
 
 **Step 2 :** Download and link to the Jquery inlinePopup plugin
 
-**Step 3 :** Fire the jQuery simpleValidation Plugin 
+**Step 3 :** Fire the jQuery inlinePopup Plugin 
 ```javascript
 $(document).ready(function(){
 	$("#wrapper-container").inlinePopup({selector : ".eachSection"})
