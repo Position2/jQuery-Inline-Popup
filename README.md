@@ -22,13 +22,13 @@ $(document).ready(function(){
 *  **itemSelector**<br/>
 _Child class.Click event will be added to these child elements._(eg:".items")
 *  **ipclass**<br/>
-_Inline popup class._(Default : inlinepopup)
+_Inline popup wrapper element class._(Default : inlinepopup)
 *  **ipcloseclass**<br/>
-_Inline popup close class._(Default : inlinepopupClose)
+_Inline popup close element class._(Default : inlinepopupClose)
 *  **iparrowclass**<br/>
-_Inline popup arrow class._(Default : inlinepopup_arrow)
+_Inline popup arrow element class._(Default : inlinepopup_arrow)
 *  **ipcontentwrapperclass**<br/>
-_Inline popup content wrapper class._(Default : inlinepopup\_content)
+_Inline popup content wrapper element class._(Default : inlinepopup\_content)
 *  **detailsElem**<br/>
 _Class of the element which has preview/detailed content._(Default : ip\_details)
 *  **activeFirst**<br/>
