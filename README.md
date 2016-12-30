@@ -85,11 +85,11 @@ All sizing of items is handled by your CSS.
 ### Initialize with jQuery
 ```
 $("#ip-container").inlinePopup({
-	"itemSelector" 					: ".article",
-	"ipcloseclass"          : "inlinepopupClose",
-	"iparrowclass"          : "inlinepopup_arrow",
-	"ipcontentwrapperclass" : "inlinepopup_content",
-	"closeinnerelem"				:"X"
+	"itemSelector":".article",
+	"ipcloseclass":"inlinepopupClose",
+	"iparrowclass":"inlinepopup_arrow",
+	"ipcontentwrapperclass":"inlinepopup_content",
+	"closeinnerelem":"X"
 })
 ```
 
