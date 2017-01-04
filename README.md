@@ -1,8 +1,6 @@
 # jQuery-Inline-Popup
 
-A jQuery Plugin to show content/image within inline.
-
-It is a simple plugin to show content/image within an inline frame using a simplified jQuery code that enable users to expand preview as can be seen in Google Image.
+A jQuery Plugin to show content/image within an inline frame using a simplified jQuery code that enable users to expand preview as can be seen in Google Image.
 
 Here the steps to configure...
 
