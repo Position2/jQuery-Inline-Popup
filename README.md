@@ -2,7 +2,7 @@
 
 A jQuery Plugin to show content/image within inline.
 
-InlinePopup is a simplified jquery plugin to achieve expanding preview as like Google Image.
+It is a simple plugin to show content/image within an inline frame using a simplified jQuery code that enable users to expand preview as can be seen in Google Image.
 
 Here the steps to configure...
 
