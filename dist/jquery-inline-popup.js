@@ -1,6 +1,8 @@
-/*
-JQuery Inline Popup
-https://github.com/Position2/jQuery-Inline-Popup
+/**
+* JQuery Inline Popup
+* Copyright (c) 2017 Position2 Inc.
+* Licensed under MIT (http://opensource.org/licenses/MIT)
+* https://github.com/Position2/jQuery-Inline-Popup
 */
 (function($) {
   var defaults = {  "itemSelector"          : "",
