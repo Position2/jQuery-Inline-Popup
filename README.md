@@ -11,7 +11,7 @@ Here the steps to configure...
 **Step 3 :** Fire the jQuery inlinePopup Plugin 
 ```javascript
 $(document).ready(function(){
-	$("#wrapper-container").inlinePopup({itemSelector : ".items"})
+  $("#wrapper-container").inlinePopup({itemSelector : ".items"})
 });
 ```
 
@@ -54,17 +54,17 @@ InlinePopup works on a container element with a group of similar child items.
 ```
 <div id="wrapper-container">
   <div class="items">
-		...
-		<div class="ip_details">..
-			(detailed content/large image for preview )..
-		</div>
-	</div>
-	<div class="items">
-		...
-		<div class="ip_details">..
-			(detailed content/large image for preview )..
-		</div>
-	</div>
+    ...
+    <div class="ip_details">..
+      (detailed content/large image for preview )..
+    </div>
+  </div>
+  <div class="items">
+    ...
+    <div class="ip_details">..
+      (detailed content/large image for preview )..
+    </div>
+  </div>
   ...
 </div>
 ```
@@ -83,11 +83,11 @@ All sizing of items is handled by your CSS.
 ### Initialize with jQuery
 ```
 $("#ip-container").inlinePopup({
-	"itemSelector":".article",
-	"ipcloseclass":"inlinepopupClose",
-	"iparrowclass":"inlinepopup_arrow",
-	"ipcontentwrapperclass":"inlinepopup_content",
-	"closeinnerelem":"X"
+  "itemSelector":".article",
+  "ipcloseclass":"inlinepopupClose",
+  "iparrowclass":"inlinepopup_arrow",
+  "ipcontentwrapperclass":"inlinepopup_content",
+  "closeinnerelem":"X"
 })
 ```
 
