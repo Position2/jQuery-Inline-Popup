@@ -45,13 +45,13 @@ _Close inner/child elem or Close text._(default : &lt;i class='fa fa-close'&gt;&
 ### HTML
 
 Include the inlinePopup .js file in your site.
-```
+```html
 <script src="/path/jquery-inline-popup.min.js"></script>
 ```
 
 InlinePopup works on a container element with a group of similar child items.
 
-```
+```html
 <div id="wrapper-container">
   <div class="items">
     ...
@@ -73,7 +73,7 @@ InlinePopup works on a container element with a group of similar child items.
 
 All sizing of items is handled by your CSS.
 
-```
+```css
 #wrapper-container { position:relative; }
 .items { width:250px; height:250px; float:left; }
 .ip-details { display:none; }
@@ -81,7 +81,7 @@ All sizing of items is handled by your CSS.
 ```
 
 ### Initialize with jQuery
-```
+```css
 $("#ip-container").inlinePopup({
   "itemSelector":".article",
   "ipcloseclass":"inlinepopupClose",
