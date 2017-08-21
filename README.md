@@ -2,13 +2,13 @@
 
 A jQuery Plugin to show content/image within an inline frame using a simplified jQuery code that enable users to expand preview as can be seen in Google Image.
 
-Here the steps to configure...
+Here the steps to configure.
 
-__Step 1 :__ Download and link to the Jquery plugin
+*Step 1 :* Download and link to the Jquery plugin
 
-__Step 2 :__ Download and link to the Jquery inlinePopup plugin
+*Step 2 :* Download and link to the Jquery inlinePopup plugin
 
-__Step 3 :__ Fire the jQuery inlinePopup Plugin 
+*Step 3 :* Fire the jQuery inlinePopup Plugin 
 ```javascript
 $(document).ready(function(){
   $("#wrapper-container").inlinePopup({itemSelector : ".items"})
