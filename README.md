@@ -4,11 +4,11 @@ A jQuery Plugin to show content/image within an inline frame using a simplified 
 
 Here the steps to configure...
 
-** Step 1 : ** Download and link to the Jquery plugin
+__Step 1 :__ Download and link to the Jquery plugin
 
-** Step 2 : ** Download and link to the Jquery inlinePopup plugin
+__Step 2 :__ Download and link to the Jquery inlinePopup plugin
 
-** Step 3 : ** Fire the jQuery inlinePopup Plugin 
+__Step 3 :__ Fire the jQuery inlinePopup Plugin 
 ```javascript
 $(document).ready(function(){
   $("#wrapper-container").inlinePopup({itemSelector : ".items"})
