@@ -28,7 +28,7 @@ _Inline popup arrow element class._(Default : inlinepopup_arrow)
 *  **ipcontentwrapperclass**<br/>
 _Inline popup content wrapper element class._(Default : inlinepopup\_content)
 *  **detailsElem**<br/>
-_Class of the element which has preview/detailed content._(Default : ip\_details)
+_Class of the element which has preview/detailed content._(Default : ip\-details)
 *  **activeFirst**<br/>
 _Make first child as active element by default._(default : true)
 *  **scrollToViewPort**<br/>
@@ -55,13 +55,13 @@ InlinePopup works on a container element with a group of similar child items.
 <div id="wrapper-container">
   <div class="items">
     ...
-    <div class="ip_details">..
+    <div class="ip-details">..
       (detailed content/large image for preview )..
     </div>
   </div>
   <div class="items">
     ...
-    <div class="ip_details">..
+    <div class="ip-details">..
       (detailed content/large image for preview )..
     </div>
   </div>
