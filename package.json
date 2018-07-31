@@ -1,6 +1,6 @@
 {
     "name": "jquery-inline-popup",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "title": "jQuery Inline Popup",
     "description": "A jQuery Plugin to show content/image within inline.InlinePopup is a simplified jQuery plugin to achieve expanding preview as like Google Image.",
     "keywords": [

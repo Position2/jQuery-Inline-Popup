@@ -102,14 +102,21 @@
     var firstActive = function() {
       $(ds).find(inlinePopup.settings.itemSelector).eq(0).addClass("active");
       placeDesc(null,null,false);
-    }
+    };
+    var isDevice = function() {
+      return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 768);
+    };
     this.setDataRow = function() {
-      var firstLeft = $(ds).find(inlinePopup.settings.itemSelector).filter(":visible").offset().left,currentRow = 0,activeElem = "";
+      var firstLeft = $(ds).find(inlinePopup.settings.itemSelector).filter(":visible").offset().left,
+          currentRow = 0,
+          activeElem = "",
+          prevLeft = firstLeft;
       $(ds).find("."+inlinePopup.settings.ipclass).hide();
       $(ds).find(inlinePopup.settings.itemSelector).filter(":visible").each(function() {
         var cur  = $(this),
         curLeft  = cur.offset().left;
-        if(firstLeft == curLeft) currentRow += 1;
+        if(curLeft <= prevLeft) currentRow += 1;
+        prevLeft = curLeft;
         cur.attr("data-row", currentRow);
       });
       return ds;
@@ -118,8 +125,9 @@
     $("body").on("click","."+inlinePopup.settings.ipclass+" ."+inlinePopup.settings.ipcloseclass,function(e) {
       closeDesc($(this).parents("."+inlinePopup.settings.ipclass)[0]);
     })
-    var prop_resize_timer = "";
-    $(window).resize(function() {
+    var prop_resize_timer = "",
+        trigger = isDevice() ? "orientationchange" : "resize";
+    $(window).on(trigger,function() {
       clearTimeout(prop_resize_timer);
       prop_resize_timer = setTimeout(function(){
         ds.setDataRow();
@@ -127,7 +135,7 @@
           placeDesc(null,null,true,"resize");
         }
       }, 500);
-    });
+    }) 
     return this;
   }
 })(jQuery);
