@@ -113,7 +113,7 @@
           prevLeft = firstLeft;
       $(ds).find("."+inlinePopup.settings.ipclass).hide();
       $(ds).find(inlinePopup.settings.itemSelector).filter(":visible").each(function() {
-        var cur  = $(this),
+        var cur  = $(this), 
         curLeft  = cur.offset().left;
         if(curLeft <= prevLeft) currentRow += 1;
         prevLeft = curLeft;
