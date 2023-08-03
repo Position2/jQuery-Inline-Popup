@@ -34,7 +34,7 @@
     var init = function() {
       inlinePopup.settings = $.extend({}, defaults, options);
       var ipSelector = $(ds).find(inlinePopup.settings.itemSelector);
-      if(ipSelector.size() <= 0 ) console.log("Selector not present");
+      if(ipSelector.length <= 0 ) console.log("Selector not present");
       else {
         ds.setDataRow();
         ipSelector.click(function() {
@@ -65,7 +65,7 @@
           curRowNo  = current.attr("data-row"),
           lasRowNo  = lastAct != "" ? lastAct.attr("data-row") : 0,
           curRow    = $(ds).find(inlinePopup.settings.itemSelector).filter("[data-row='"+curRowNo+"']:visible");
-          descElem  = ($(ds).find("."+inlinePopup.settings.ipclass).size() < 1 ) ? createDesc().hide() : $(ds).find("."+inlinePopup.settings.ipclass).css("height",""),
+          descElem  = ($(ds).find("."+inlinePopup.settings.ipclass).length < 1 ) ? createDesc().hide() : $(ds).find("."+inlinePopup.settings.ipclass).css("height",""),
           dpCont    = current.find("."+inlinePopup.settings.detailsElem).html() || "";
       descElem.find("."+inlinePopup.settings.ipcontentwrapperclass).html(dpCont);
       if(lasRowNo != curRowNo) {
@@ -131,7 +131,7 @@
       clearTimeout(prop_resize_timer);
       prop_resize_timer = setTimeout(function(){
         ds.setDataRow();
-        if($(ds).find(inlinePopup.settings.itemSelector).filter(".active").size() > 0) {
+        if($(ds).find(inlinePopup.settings.itemSelector).filter(".active").length > 0) {
           placeDesc(null,null,true,"resize");
         }
       }, 500);
